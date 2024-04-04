@@ -1,40 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 참고
 
-## Getting Started
+- Next.js page router
+- Styled components
 
-First, run the development server:
+# 로컬 실행법
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 이미지를 hub에 업데이트 하는 경우
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. docker-compose.dev.yml 파일의 image에 해당 image 설정
+2. .env.dev 생성
+3. docker-compose -f docker-compose.dev.yml up
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### 이미지를 hub에 업데이트 안하는 경우
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1. docker-compose.dev.yml 파일의 image 옵션 제거
+2. dockerfile 옵션 활성화
+3. .env.dev 생성
+4. docker-compose -f docker-compose.dev.yml up
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Docker 이용을 안하는 경우
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. npm run dev(3001포트)로 실행
 
-## Learn More
+<br/>
+<br/>
 
-To learn more about Next.js, take a look at the following resources:
+# 배포
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 이미지를 hub에 업데이트 하는 경우
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. docker-compose.dev.yml 파일의 image에 해당 image 설정
+2. .env.prod 생성
+3. docker-compose -f docker-compose.prod.yml up
 
-## Deploy on Vercel
+### 이미지를 hub에 업데이트 안하는 경우
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. docker-compose.dev.yml 파일의 image 옵션 제거
+2. dockerfile 옵션 활성화
+3. .env.prod 생성
+4. docker-compose -f docker-compose.prod.yml up
+# next_pagerouter_styledcomponents
