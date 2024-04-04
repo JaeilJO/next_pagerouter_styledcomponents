@@ -39,4 +39,3 @@
 2. dockerfile 옵션 활성화
 3. .env.prod 생성
 4. docker-compose -f docker-compose.prod.yml up
-# next_pagerouter_styledcomponents
